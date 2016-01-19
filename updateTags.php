@@ -63,7 +63,7 @@ $currDir = getcwd();
 
 // The CWD is our GIT repo so we can use the alias '.' to specify current dir
 echo "Creating tags...\n";
-$cmd = 'ctags . > /Users/angelomahrouchi/bin/logs/'.basename(__FILE__).'.log 2>&1';
+$cmd = 'ctags '.$currDir.' 2> /dev/null'; // Buy using getcwd(), tags paths will be absolute
 exec($cmd);
 
 $ctagsPath = $currDir.'/ctags';
